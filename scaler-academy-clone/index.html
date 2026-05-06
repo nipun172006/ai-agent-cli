@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scaler Academy Clone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Scaler home">
+        <span class="brand-mark">S</span>
+        <span>Scaler</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#programs">Programs</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#mentors">Mentors</a>
+        <a href="#outcomes">Outcomes</a>
+      </div>
+
+      <button class="nav-cta" type="button" data-callback>Request callback</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">AI-ready career acceleration</p>
+        <h1>Become the professional built for the next decade in tech.</h1>
+        <p class="hero-text">
+          Master software engineering, data, cloud, and AI with structured live learning, expert mentorship,
+          real projects, and career support inspired by Scaler Academy.
+        </p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <button class="primary-btn" type="button" data-callback>Talk to an advisor</button>
+          <a class="secondary-btn" href="#programs">Explore programs</a>
+        </div>
+
+        <div class="hero-proof" aria-label="Learner outcomes">
+          <div><strong>25K+</strong><span>learner ratings</span></div>
+          <div><strong>1:1</strong><span>mentor guidance</span></div>
+          <div><strong>24/7</strong><span>learning support</span></div>
+        </div>
+      </div>
+
+      <div class="hero-dashboard" aria-label="Program highlights">
+        <div class="dashboard-top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="dashboard-grid">
+          <article>
+            <small>Module 01</small>
+            <strong>DSA Foundations</strong>
+            <div class="progress"><span style="width: 88%"></span></div>
+          </article>
+          <article>
+            <small>Module 02</small>
+            <strong>AI Pair Labs</strong>
+            <div class="progress"><span style="width: 74%"></span></div>
+          </article>
+          <article>
+            <small>Career Track</small>
+            <strong>Mock Interviews</strong>
+            <div class="progress"><span style="width: 92%"></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-band">
+      <div class="container split">
+        <div>
+          <p class="section-kicker">Built different, designed to last</p>
+          <h2>Everything a working professional needs to move into better tech roles.</h2>
+        </div>
+        <p>
+          The experience combines deep fundamentals, AI-assisted practice, live classes, mentor reviews,
+          and a practical roadmap that keeps pace with the market.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Programs</p>
+          <h2>Find the right AI path for your role.</h2>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card is-active">
+            <span class="card-tag">Software</span>
+            <h3>Modern Software and AI Engineering</h3>
+            <p>DSA, system design, backend architecture, projects, and AI workflows for product teams.</p>
+            <button type="button">Explore track</button>
+          </article>
+          <article class="program-card">
+            <span class="card-tag">Data</span>
+            <h3>Data Science and ML with AI</h3>
+            <p>Statistics, ML systems, model evaluation, analytics storytelling, and applied AI projects.</p>
+            <button type="button">Explore track</button>
+          </article>
+          <article class="program-card">
+            <span class="card-tag">Cloud</span>
+            <h3>DevOps, Cloud and Platform Engineering</h3>
+            <p>Cloud infrastructure, CI/CD, observability, containers, automation, and platform thinking.</p>
+            <button type="button">Explore track</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section curriculum" id="curriculum">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Curriculum</p>
+          <h2>Structured learning with real accountability.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>01</span>
+            <div>
+              <h3>Programming foundations</h3>
+              <p>Time complexity, arrays, recursion, object-oriented design, and clean problem solving.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>02</span>
+            <div>
+              <h3>Data structures and algorithms</h3>
+              <p>Trees, graphs, dynamic programming, heaps, hashing, and interview-style practice.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>03</span>
+            <div>
+              <h3>System design and projects</h3>
+              <p>Scalable services, databases, caching, APIs, real-world builds, and architecture reviews.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>04</span>
+            <div>
+              <h3>Career support</h3>
+              <p>Mock interviews, profile building, mentor feedback, and job-readiness coaching.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mentors" id="mentors">
+      <div class="container split">
+        <div>
+          <p class="section-kicker">Mentorship</p>
+          <h2>Learn from engineers who have built at top technology companies.</h2>
+          <p>
+            Weekly mentor sessions, TA support, and guided reviews help learners convert effort into progress.
+          </p>
+        </div>
+        <div class="mentor-list">
+          <article>
+            <strong>Industry mentors</strong>
+            <span>Architecture, interviews, and career direction</span>
+          </article>
+          <article>
+            <strong>Teaching assistants</strong>
+            <span>Doubt solving and assignment support</span>
+          </article>
+          <article>
+            <strong>Career coaches</strong>
+            <span>Mock interviews and hiring preparation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section outcomes" id="outcomes">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Outcomes</p>
+          <h2>Proof matters more than promises.</h2>
+        </div>
+
+        <div class="stats-grid">
+          <article><strong>4.8+</strong><span>average learner rating</span></article>
+          <article><strong>600+</strong><span>hiring partners</span></article>
+          <article><strong>12 mo</strong><span>guided learning path</span></article>
+          <article><strong>Live</strong><span>classes and projects</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="container">
+        <p class="section-kicker">Start your next chapter</p>
+        <h2>Ready to build skills that compound?</h2>
+        <button class="primary-btn" type="button" data-callback>Request callback</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark">S</span>
+          <span>Scaler</span>
+        </a>
+        <p>Educational Scaler Academy inspired clone generated by an AI CLI agent.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="#programs">Programs</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#mentors">Mentors</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="#outcomes">Reviews</a>
+        <a href="#outcomes">Career outcomes</a>
+        <a href="#top">Contact</a>
+      </div>
+      <div>
+        <h3>Social</h3>
+        <a href="https://www.scaler.com/" target="_blank" rel="noreferrer">Official Scaler</a>
+        <a href="#top">LinkedIn</a>
+        <a href="#top">YouTube</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>Made for Assignment 02</span>
+      <span id="year"></span>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
