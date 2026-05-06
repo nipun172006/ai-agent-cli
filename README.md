@@ -26,7 +26,7 @@ The generated page includes a header, hero section, CTA buttons, program cards, 
 - OpenAI-powered tool-calling loop
 - `executeCommand` tool for safe shell commands inside the project
 - `writeFile` tool for creating files
-- Deterministic Scaler Academy inspired website generator for reliable demos
+- Model-generated HTML, CSS, and JavaScript written through `writeFile`
 - Clean error handling for invalid JSON and failed tools
 
 ## Setup
@@ -49,16 +49,9 @@ Add your API key and model settings:
 OPENAI_API_KEY=your-megallm-or-openai-key-here
 OPENAI_BASE_URL=https://ai.megallm.io/v1
 OPENAI_MODEL=openai-gpt-oss-20b
-DEMO_MODE=false
 ```
 
 If you are using a direct OpenAI key instead of MegaLLM, remove `OPENAI_BASE_URL` and set `OPENAI_MODEL` to an OpenAI model available on your account.
-
-If your API account has no credits and you get a quota/billing error, you can still run the local assignment demo by setting:
-
-```env
-DEMO_MODE=true
-```
 
 ## Run
 
@@ -94,7 +87,13 @@ THINK
 TOOL executeCommand("mkdir -p scaler-academy-clone")
 OBSERVE
 THINK
-TOOL createScalerCloneWebsite({"folderName":"scaler-academy-clone"})
+TOOL writeFile({"path":"scaler-academy-clone/index.html","content":"..."})
+OBSERVE
+THINK
+TOOL writeFile({"path":"scaler-academy-clone/style.css","content":"..."})
+OBSERVE
+THINK
+TOOL writeFile({"path":"scaler-academy-clone/script.js","content":"..."})
 OBSERVE
 OUTPUT
 ```
