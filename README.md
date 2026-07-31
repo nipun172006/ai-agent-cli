@@ -1,4 +1,4 @@
-# Assignment 02: AI Agent CLI Tool
+# AI Agent CLI
 
 A conversational Node.js CLI agent that runs in the terminal, accepts natural language instructions, reasons through a visible agent loop, calls tools, and creates real files.
 
@@ -24,7 +24,7 @@ The generated page includes a header, hero section, CTA buttons, program cards, 
 - Conversational terminal loop using `readline`
 - START, THINK, TOOL, OBSERVE, OUTPUT agent steps
 - OpenAI-powered tool-calling loop
-- `executeCommand` tool for safe shell commands inside the project
+- `executeCommand` tool with project-local execution and a defensive command blocklist
 - `writeFile` tool for creating files
 - Model-generated HTML, CSS, and JavaScript written through `writeFile`
 - Clean error handling for invalid JSON and failed tools
@@ -122,3 +122,25 @@ For the 2 to 3 minute YouTube video:
 ## Notes
 
 This project generates an educational Scaler Academy inspired clone for an assignment demo. It is not affiliated with Scaler and does not copy Scaler source code.
+
+## Safety boundary
+
+- File writes resolve relative paths and reject paths outside the current
+  project directory.
+- Shell commands run with the project as their working directory, a 30-second
+  timeout, and a blocklist for common destructive/system-level commands.
+- A blocklist is not a complete sandbox. Model-generated commands can still be
+  unsafe or access network and user-visible project files.
+- Run the agent in a disposable project directory, inspect tool calls before
+  relying on their output, and do not use it with sensitive files or broad
+  system permissions.
+
+## Validation
+
+```bash
+npm test
+npm run check
+```
+
+The coursework origin and Scaler-inspired demonstration remain disclosed; the
+repository is not affiliated with Scaler.

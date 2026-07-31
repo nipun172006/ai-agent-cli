@@ -10,10 +10,18 @@ import { pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 
 const execAsync = promisify(exec);
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || process.env.MEGALLM_API_KEY || process.env.API_KEY,
-  baseURL: process.env.OPENAI_BASE_URL,
-});
+let client;
+
+function getClient() {
+  if (!client) {
+    client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY || process.env.MEGALLM_API_KEY || process.env.API_KEY,
+      baseURL: process.env.OPENAI_BASE_URL,
+    });
+  }
+
+  return client;
+}
 
 const ROOT_DIR = process.cwd();
 const MODEL = process.env.OPENAI_MODEL || "gpt-4.1-mini";
@@ -169,7 +177,10 @@ function resolveInsideWorkspace(relativePath) {
 
 function assertSafeCommand(command) {
   const blockedPatterns = [
-    { pattern: /\brm\s+(-[^\s]*r|--recursive)\b/i, reason: "recursive deletion is blocked" },
+    {
+      pattern: /\brm\s+(?:-[a-z]*r[a-z]*|--recursive)(?:\s|$)/i,
+      reason: "recursive deletion is blocked",
+    },
     { pattern: /\bgit\s+reset\s+--hard\b/i, reason: "destructive git reset is blocked" },
     { pattern: /\bsudo\b/i, reason: "sudo commands are blocked" },
     { pattern: /\bchmod\s+777\b/i, reason: "wide-open chmod is blocked" },
@@ -347,7 +358,7 @@ async function runAgentTurn(userInput, messages) {
     let response;
 
     try {
-      response = await client.chat.completions.create({
+      response = await getClient().chat.completions.create({
         model: MODEL,
         messages,
         response_format: { type: "json_object" },
@@ -488,7 +499,7 @@ async function main() {
   }
 }
 
-export { executeCommand, writeFile };
+export { assertSafeCommand, executeCommand, resolveInsideWorkspace, writeFile };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main().catch((error) => {
